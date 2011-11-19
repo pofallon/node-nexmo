@@ -6,14 +6,20 @@ A node.js library for accessing the Nexmo REST API.
 ```javascript
 var nexmo = require('nexmo')({key: 'key', secret: 'key'});
 
+// Send an SMS message
+
 var message = nexmo.sms({to: 'to', from: 'from', text: 'Welcome to Nexmo on Node!'});
 
 message.send(function(err, results) {
-  if (err) {
-    console.log('Nexmo error: ' + err);
-  } else {
-    console.log('Message ID: ' + results.id + ' sent!');
+  if (!err) {
+    console.log('Your message (ID ' + results.id + ') was sent!');
   }
+});
+
+// ... or check your account balance
+
+nexmo.account.balance(function(err,balance) {
+  console.log('Your account balance is: ' + balance);
 });
 
 ```
