@@ -30,9 +30,10 @@ module.exports = testCase({
       test.equals(err,null);
       test.notEqual(results,null);
       if (results) {
-        test.notEqual(results.id,null);
-        test.notEqual(results.price,null);
-        test.notEqual(results.balance,null);
+        test.notEqual(results['message-count'],null);
+        test.notEqual(results.messages[0]['message-id'],null);
+        test.notEqual(results.messages[0]['remaining-balance'],null);
+        test.notEqual(results.messages[0]['message-price'],null);
       }
       test.done();
     });

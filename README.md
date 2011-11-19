@@ -12,7 +12,7 @@ var message = nexmo.sms({to: 'to', from: 'from', text: 'Welcome to Nexmo from No
 
 message.send(function(err, results) {
   if (!err) {
-    console.log('Your message (ID ' + results.id + ') was sent!');
+    console.log('Your message was delivered in ' + results['message-count'] + ' part(s)!');
   }
 });
 
