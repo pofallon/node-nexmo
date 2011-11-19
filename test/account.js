@@ -22,11 +22,19 @@ module.exports = testCase({
 
   getBalance: function (test) {
 
-    var a = nexmo.account();
-
-    a.balance(function(err, b) {
+    nexmo.account.balance(function(err, b) {
       test.equals(err,null);
       test.notEqual(b,null);
+      test.done();
+    });
+
+  },
+
+  getPricing: function (test) {
+
+    nexmo.account.pricing('US',function(err, p) {
+      test.equals(err,null);
+      test.notEqual(p,null);
       test.done();
     });
 
