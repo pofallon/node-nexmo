@@ -16,24 +16,17 @@ module.exports = testCase({
 
   setUp: function (callback) {
 
-    this.to = testCredentials.to;
-    this.from = testCredentials.from || "nodeNexmoTest";
     callback();
     
   },
 
-  sendTextSms: function (test) {
+  getBalance: function (test) {
 
-    var s = nexmo.sms({to: this.to, from: this.from, text: 'Nexmo Test!'});
+    var a = nexmo.account();
 
-    s.send(function(err, results) {
+    s.balance(function(err, b) {
       test.equals(err,null);
-      test.notEqual(results,null);
-      if (results) {
-        test.notEqual(results.id,null);
-        test.notEqual(results.price,null);
-        test.notEqual(results.balance,null);
-      }
+      test.notEqual(b,null);
       test.done();
     });
 
