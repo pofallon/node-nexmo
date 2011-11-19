@@ -18,7 +18,7 @@ message.send(function(err, results) {
 
 // ... or check your account balance
 
-nexmo.account.balance(function(err,balance) {
+nexmo.account.balance(function(err, balance) {
   console.log('Your account balance is: ' + balance);
 });
 
