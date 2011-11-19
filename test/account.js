@@ -24,7 +24,7 @@ module.exports = testCase({
 
     var a = nexmo.account();
 
-    s.balance(function(err, b) {
+    a.balance(function(err, b) {
       test.equals(err,null);
       test.notEqual(b,null);
       test.done();
