@@ -16,13 +16,21 @@ message.send(function(err, results) {
   }
 });
 
-// ... or check your account balance
+// Check your account balance
 
 nexmo.account.balance(function(err, balance) {
   if (!err) {
     console.log('Your account balance is: ' + balance);
   }
 });
+
+// ... or spin up an http server and emit message receipts
+
+nexmo.receipts.on('failed', function(msg) {
+  console.log('Message to ' + msg.to + ' failed!');
+  nexmo.receipts.stop();
+}
+nexmo.receipts.start();
 
 ```
 

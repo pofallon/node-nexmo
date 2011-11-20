@@ -5,7 +5,8 @@
   "author": "Paul O'Fallon <paul@ofallonfamily.com>",
   "homepage": "https://github.com/pofallon/node-nexmo",
   "dependencies": {
-    "request": "2.2.x"
+    "request": "2.2.x",
+    "connect": "1.8.x"
   },
   "devDependencies": {
     "nodeunit": "0.5.x"
