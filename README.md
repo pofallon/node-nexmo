@@ -45,4 +45,5 @@ nexmo.receipts.start();
 This library depends on:
 
 * [mikeal/request](https://github.com/mikeal/request)
+* [senchalabs/connect](https://github.com/senchalabs/connect)
 * [caolan/nodeunit](https://github.com/caolan/nodeunit) (for unit tests)
